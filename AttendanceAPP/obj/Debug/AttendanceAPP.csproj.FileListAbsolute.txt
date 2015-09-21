@@ -1,0 +1,27 @@
+F:\AttendanceAPP\AttendanceAPP\bin\Debug\AttendanceAPP.exe.config
+F:\AttendanceAPP\AttendanceAPP\bin\Debug\AttendanceAPP.exe
+F:\AttendanceAPP\AttendanceAPP\bin\Debug\AttendanceAPP.pdb
+F:\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.Admin.resources
+F:\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.Login.resources
+F:\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.Properties.Resources.resources
+F:\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
+F:\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.exe
+F:\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.pdb
+G:\C# tutorial\AttendanceAPP\AttendanceAPP\bin\Debug\AttendanceAPP.exe.config
+G:\C# tutorial\AttendanceAPP\AttendanceAPP\bin\Debug\AttendanceAPP.exe
+G:\C# tutorial\AttendanceAPP\AttendanceAPP\bin\Debug\AttendanceAPP.pdb
+G:\C# tutorial\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.Admin.resources
+G:\C# tutorial\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.Login.resources
+G:\C# tutorial\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.Properties.Resources.resources
+G:\C# tutorial\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
+G:\C# tutorial\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.exe
+G:\C# tutorial\AttendanceAPP\AttendanceAPP\obj\Debug\AttendanceAPP.pdb
+F:\AttendanceAppBalancika-master\AttendanceAPP\bin\Debug\AttendanceAPP.exe.config
+F:\AttendanceAppBalancika-master\AttendanceAPP\bin\Debug\AttendanceAPP.exe
+F:\AttendanceAppBalancika-master\AttendanceAPP\bin\Debug\AttendanceAPP.pdb
+F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.Admin.resources
+F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.Login.resources
+F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.Properties.Resources.resources
+F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
+F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.exe
+F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.pdb
