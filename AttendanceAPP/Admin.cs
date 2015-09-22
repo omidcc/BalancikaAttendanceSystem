@@ -18,7 +18,7 @@ namespace AttendanceAPP
         {
             InitializeComponent();
             LoadComboBox();
-            monthListComboBox.SelectedIndex = 0;
+            
            
         }
 
@@ -35,6 +35,7 @@ namespace AttendanceAPP
             foreach (Stuff stuff in myStuffList)
             {
                 nameComboBox.Items.Add(stuff.Name);
+               
               
             }
             nameComboBox.SelectedIndex = 0;
@@ -49,13 +50,16 @@ namespace AttendanceAPP
         List<string> selectedDateList = new List<string>();
         private string firstDate;
         private string lastDate;
+
         private void searchButton_Click(object sender, EventArgs e)
         {
             dateListView.Items.Clear();
 
             string name = nameComboBox.SelectedItem.ToString();
-            month(monthListComboBox.SelectedItem.ToString());
+            //month(monthListComboBox.SelectedItem.ToString());
             
+
+
             
             List<string> datList= aStuffManager.GetStuffAttendanceList(name,firstDate,lastDate );
             if (datList.Count <= 0)
@@ -64,14 +68,7 @@ namespace AttendanceAPP
             }
             else
             {
-                foreach (string date in datList)
-                {
-                    DateTime timeG = DateTime.Parse(date);
-                    string con = null;
-                    con += timeG.ToString("yyyy-MM-dd");
-                    
-                    dateListView.Items.Add(con);
-                }
+               
             }
 
 
@@ -81,42 +78,8 @@ namespace AttendanceAPP
         
       
 
-        void CallForAttendance(string nameSearch)
-        {
-            int myId = 0;
+        
 
-            foreach (Stuff stuff in myStuffList)
-            {
-                if (nameSearch == stuff.Name)
-                {
-                    myId = stuff.Id;
-                    break;
-                }
-                
-            }
-            myAttendanceList = aStuffManager.GetAllAttendance(myId);
-           
-         
-        }
-
-        //void Extra()
-        //{
-        //    string nameSearch = nameComboBox.SelectedItem.ToString();
-        //    string monthSearch = monthListComboBox.SelectedItem.ToString();
-
-        //    CallForAttendance(nameSearch);
-        //    dateListView.Items.Clear();
-
-        //    string test = month(monthSearch);
-        //    foreach (string ss in myAttendanceList)
-        //    {
-        //        if (ss[0] == test[0])
-        //        {
-        //            selectedDateList.Add(ss);
-        //        }
-        //        dateListView.Items.Add(ss);
-        //    }
-        //}
 
       public void month(string ss)
         {
@@ -208,5 +171,7 @@ namespace AttendanceAPP
           login.Closed += (s, args) => this.Close();
           login.Show();
       }
+
+
     }
 }

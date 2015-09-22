@@ -78,31 +78,7 @@ namespace AttendanceAPP.DAL
             return count > 0;
         }
 
-        public List<string> GetAllAttendance(int myId)
-        {
-            string Query = @"select * from tbl_attendance where userId='"+myId+"'";
-
-            SqlConnection connection = new SqlConnection(connectionStrings);
-
-            connection.Open();
-            SqlCommand command = new SqlCommand(Query, connection);
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            List<string>myDateList=new List<string>();
-            while (reader.Read())
-            {
-                string date = reader["date"].ToString();
-              
-                
-
-                myDateList.Add(date);
-            }
-            reader.Close();
-            connection.Close();
-
-            return myDateList;
-        }
+      
 
         public List<string> GetAttendanceList(int id, string firstDate, string lastDate)
         {
@@ -125,6 +101,54 @@ namespace AttendanceAPP.DAL
             connection.Close();
 
             return myDateList;
+        }
+
+        public void SubmitAttendance(int i, string date)
+        {
+            string Query = @"insert into tbl_attendance(userId,date) values('" + i + "','" + date + "')";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+        List<string>attendanceList=new List<string>(); 
+        public int GetCurrentId(int id, string date)
+        {
+            string Query = @"select * from tbl_attendance where userId='"+id+"' and date='"+date+"'";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+            int mydateId = 0;
+           
+
+            while (reader.Read())
+            {
+                mydateId=Int32.Parse(reader["Id"].ToString());
+          
+            }
+            reader.Close();
+            connection.Close();
+
+            return mydateId;
+        }
+
+        public void SubmitLogin(int id, DateTime time, string remark)
+        {
+            string Query = @"insert into tbl_login values('"+time.ToString()+"','"+remark+"','"+id+"')";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
         }
     }
 }

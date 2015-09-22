@@ -25,3 +25,12 @@ F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.Propertie
 F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
 F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.exe
 F:\AttendanceAppBalancika-master\AttendanceAPP\obj\Debug\AttendanceAPP.pdb
+F:\New App\Attendance App\AttendanceAPP\bin\Debug\AttendanceAPP.exe.config
+F:\New App\Attendance App\AttendanceAPP\bin\Debug\AttendanceAPP.exe
+F:\New App\Attendance App\AttendanceAPP\bin\Debug\AttendanceAPP.pdb
+F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.Admin.resources
+F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.Login.resources
+F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.Properties.Resources.resources
+F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
+F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.exe
+F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.pdb

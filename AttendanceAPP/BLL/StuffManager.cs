@@ -31,10 +31,7 @@ namespace AttendanceAPP.BLL
         }
 
 
-        public List<string> GetAllAttendance(int myId)
-        {
-            return aStuffGateway.GetAllAttendance(myId);
-        }
+       
 
         public List<string> GetStuffAttendanceList(string name, string firstDate,string lastDate)
         {
@@ -52,7 +49,24 @@ namespace AttendanceAPP.BLL
             return dateList;
 
 
-        } 
-         
+        }
+
+
+       
+
+        internal void submitAttendance(int p, string date)
+        {
+            aStuffGateway.SubmitAttendance(p,date);
+        }
+
+        public int getCurrentDateId(int id, string date)
+        {
+            return aStuffGateway.GetCurrentId(id,date);
+        }
+
+        public void SubmitLogin(int id, DateTime time, string remark)
+        {
+            aStuffGateway.SubmitLogin(id,time,remark);
+        }
     }
 }

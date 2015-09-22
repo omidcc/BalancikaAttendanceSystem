@@ -140,10 +140,36 @@ namespace AttendanceAPP
             }
         }
 
+        private Attendance myAttendance;
+        private Stuff myStuff;
         private void logOnButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hide Work");
+            //MessageBox.Show("Hide Work");
+            string username = userNameTextBox.Text;
+            string password = passwordTextBox.Text;
+            string remark = remarksTextBox.Text;
+            foreach (Stuff stuff in aStuffList)
+            {
+                if (username == stuff.Username && password == stuff.Password)
+                {
+                    string date = DateTime.Now.ToString();
+                   aStuffManager.submitAttendance(stuff.Id,date);
+
+                    int id=aStuffManager.getCurrentDateId(stuff.Id,date);
+
+                    DateTime time=DateTime.Now.ToLocalTime();
+                    aStuffManager.SubmitLogin(id,time,remark);
+                   
+
+
+                }
+            }
+           
+
+            
         }
+
+       
 
         private void userNameTextBox_KeyDown(object sender, KeyEventArgs e)
         {

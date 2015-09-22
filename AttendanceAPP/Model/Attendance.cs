@@ -11,5 +11,12 @@ namespace AttendanceAPP.Model
         public int Id { get; set; }
         public string Date { get; set; }
         public int UserId { get; set; }
+        public DateTime LoginTime { get; set; }
+        public DateTime LogoutTime { get; set; }
+        public string LoginRemarks { get; set; }
+        public string LogoutRemarks { get; set; }
+
+        public int DateId { get; set; }
+        public int HolyDayCheker { get; set; }
     }
 }
