@@ -110,7 +110,6 @@
             this.remarksTextBox.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remarksTextBox.Location = new System.Drawing.Point(260, 329);
             this.remarksTextBox.Name = "remarksTextBox";
-            this.remarksTextBox.PasswordChar = '*';
             this.remarksTextBox.Size = new System.Drawing.Size(239, 23);
             this.remarksTextBox.TabIndex = 3;
             // 

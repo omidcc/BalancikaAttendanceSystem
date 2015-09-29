@@ -31,8 +31,6 @@ namespace AttendanceAPP
             userComboBox.Items.Add("Employee");
             userComboBox.Items.Add("Admin");
             userComboBox.SelectedIndex = 0;
-
-
             TimeChecker();
 
 
@@ -69,25 +67,9 @@ namespace AttendanceAPP
             }
             else
             {
-                int flag = 1;
-                foreach (Stuff stuff in aStuffList)
-                {
-                    if ((stuff.Username == username) && (stuff.Password == password))
-                    {
-                        DateTime aDateTime = DateTime.Today.Date.Date;
-                        aStuffManager.AttendanceSubmit(aDateTime, stuff.Id, out message);
-                        MessageBox.Show(message);
-                        userNameTextBox.Text = passwordTextBox.Text = "";
-                        flag = 0;
-                        break;
-                    }
-
-
-
-                }
-                if (flag == 1)
-                    MessageBox.Show("Invalid username or password");
+                MessageBox.Show("Admin username and password is incorrect", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
 
 
  
@@ -119,7 +101,7 @@ namespace AttendanceAPP
                 remarkLabel.Show();
                 remarksTextBox.Show();
                 logOnButton.Show();
-                TimeChecker();
+          TimeChecker();
                 
 
 
@@ -148,28 +130,53 @@ namespace AttendanceAPP
             string username = userNameTextBox.Text;
             string password = passwordTextBox.Text;
             string remark = remarksTextBox.Text;
+            string message = "Username & Password is incorrect!";
+            string date = DateTime.Now.ToString();
+
+            bool getAttendance = false;
+            
             foreach (Stuff stuff in aStuffList)
             {
                 if (username == stuff.Username && password == stuff.Password)
                 {
-                    string date = DateTime.Now.ToString();
-                   aStuffManager.submitAttendance(stuff.Id,date);
+                    if (aStuffManager.CheckAttendance(stuff.Id, date))
+                    {
+                        getAttendance = false;
+                        message = "This employee Already gets his attendance for today";
+                        break;
 
-                    int id=aStuffManager.getCurrentDateId(stuff.Id,date);
+                    }
+                    else
+                    {
+                       
+                        aStuffManager.submitAttendance(stuff.Id, date);
 
-                    DateTime time=DateTime.Now.ToLocalTime();
-                    aStuffManager.SubmitLogin(id,time,remark);
-                   
+                        int id = aStuffManager.getCurrentDateId(stuff.Id, date);
 
-
+                        DateTime time = DateTime.Now.ToLocalTime();
+                        aStuffManager.SubmitLogin(id, time, remark);
+                        getAttendance = true;
+                        MessageBox.Show("Attendance Submitted Successfully", "Success");
+                        ClearAll();
+                        break;
+                    }
                 }
+                
+            }
+            if (!getAttendance)
+            {
+                MessageBox.Show(message, "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
            
 
             
         }
 
-       
+        private void ClearAll()
+        {
+            userNameTextBox.Text = passwordTextBox.Text = remarksTextBox.Text = null;
+        }
+
 
         private void userNameTextBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -189,13 +196,46 @@ namespace AttendanceAPP
 
         private void logOutButton_Click(object sender, EventArgs e)
         {
+            string username = userNameTextBox.Text;
+            string password = passwordTextBox.Text;
+            string remarks = remarksTextBox.Text;
+            DateTime date = DateTime.Now;
+            string message = "";
             if (userComboBox.SelectedIndex == 0)
             {
+                string mes;
+                int flag = 1;
+                foreach (Stuff stuff in aStuffList)
+                {
+                    if ((stuff.Username == username) && (stuff.Password == password))
+                    {
+                        if (aStuffManager.LogOutSubmit(date, stuff.Id, out message, remarks))
+                        {
+                            MessageBox.Show(message, "Success");
+                        }
+                        else
+                        {
+                            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
 
+                        userNameTextBox.Text = passwordTextBox.Text = "";
+                        flag = 0;
+                        break;
+                    }
+                    ClearAll();
+
+
+
+
+                }
+            
+            if (flag == 1)
+                    MessageBox.Show("Invalid username or password","Error",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
             }
             else
             {
                 AdminRole();
+                ClearAll();
             }
         }
 

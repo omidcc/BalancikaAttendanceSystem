@@ -150,5 +150,38 @@ namespace AttendanceAPP.DAL
             command.ExecuteNonQuery();
             connection.Close();
         }
+
+        public bool CheckLogout(int date)
+        {
+            string Query = @"select * from tbl_logout where  dateId='" + date + "'";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+            bool result = false;
+            while (reader.Read())
+            {
+                result = true;
+            }
+            reader.Close();
+            connection.Close();
+            return result;
+        }
+
+        public void LogoutSubmit(DateTime aDateTime, int id,string remarks)
+        {
+            string Query = @"insert into tbl_logout(logout_time,remarks,dateId) values('" + aDateTime.ToString() + "','" + remarks + "','" + id + "')";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+            
+        }
     }
 }

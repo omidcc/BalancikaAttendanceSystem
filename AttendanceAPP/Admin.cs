@@ -172,6 +172,19 @@ namespace AttendanceAPP
           login.Show();
       }
 
+      private void label4_Click(object sender, EventArgs e)
+      {
+          logOutButton_Click(sender,e);
+      }
+
+      private void giveAttendance_Click(object sender, EventArgs e)
+      {
+          TemporaryAttendance tm=new TemporaryAttendance();
+          tm.Show();
+      }
+
+      
+
 
     }
 }

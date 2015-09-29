@@ -68,5 +68,37 @@ namespace AttendanceAPP.BLL
         {
             aStuffGateway.SubmitLogin(id,time,remark);
         }
+
+        public bool CheckAttendance(int id, string date)
+        {
+            
+            return aStuffGateway.CheckAttendance(DateTime.Parse(date),id);
+            
+        }
+
+        public bool LogOutSubmit(DateTime aDateTime, int id, out string message,string remarks)
+        {
+                int dateId = getCurrentDateId(id, aDateTime.ToString());
+            if (dateId != 0)
+            {
+                if (aStuffGateway.CheckLogout(dateId))
+                {
+                    message = "You have already Logged out";
+
+                    return false;
+                }
+                else
+                {
+                    aStuffGateway.LogoutSubmit(aDateTime, dateId, remarks);
+                    message = "Logged out successfully";
+                    return true;
+                }
+            }
+            else
+            {
+                message = "Submit the login First";
+                return false;
+            }
+        }
     }
 }
