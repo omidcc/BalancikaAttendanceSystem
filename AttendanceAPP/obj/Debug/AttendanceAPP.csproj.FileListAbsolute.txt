@@ -34,14 +34,13 @@ F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.Properties.Resou
 F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
 F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.exe
 F:\New App\Attendance App\AttendanceAPP\obj\Debug\AttendanceAPP.pdb
-E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.exe.config
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.exe
-E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.pdb
+E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.exe.config
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.exe
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.pdb
-E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.csprojResolveAssemblyReference.cache
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Admin.resources
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Login.resources
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Properties.Resources.resources
-E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.TemporaryAttendance.resources
+E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
+E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.pdb

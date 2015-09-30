@@ -100,5 +100,22 @@ namespace AttendanceAPP.BLL
                 return false;
             }
         }
+
+        public List<Details> GetAttendanceList(int stuffId, string firstDate, string lastDate)
+        {
+            List<Details> AttendanceList = aStuffGateway.GetAttendanceID(stuffId, firstDate, lastDate);
+            foreach (Details details in AttendanceList)
+            {
+                int id = details.dateId;
+                Details loginDetails = aStuffGateway.LoginGet(id);
+                Details logoutDetails = aStuffGateway.LogoutGet(id);
+                details.LoginTime = loginDetails.LoginTime;
+                details.LoginRemark = loginDetails.LoginRemark;
+                details.LogoutRemark = logoutDetails.LogoutRemark;
+                details.LogoutTime = logoutDetails.LogoutTime;
+
+            }
+            return AttendanceList;
+        }
     }
 }

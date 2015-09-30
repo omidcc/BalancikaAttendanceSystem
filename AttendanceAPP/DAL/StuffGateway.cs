@@ -183,5 +183,85 @@ namespace AttendanceAPP.DAL
             connection.Close();
             
         }
+
+        public List<Details> GetAttendanceID(int stuffId, string firstDate, string lastDate)
+        {
+
+         string Query = @"select * from tbl_attendance where userId='" + stuffId + "' and date between '"+DateTime.Parse(firstDate)+"' and '"+DateTime.Parse(lastDate)+"'";
+            //string Query = @"select * from tbl_attendance where userId='" + stuffId + "' ";
+           
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+            int mydateId = 0;
+
+            List<Details> detailsList=new List<Details>();
+         
+            while (reader.Read())
+            {
+                Details aDetails=new Details();
+                aDetails.dateId = Int32.Parse(reader["Id"].ToString());
+                aDetails.Date = reader["date"].ToString();
+                detailsList.Add(aDetails);
+
+            }
+            reader.Close();
+            connection.Close();
+
+            return detailsList;
+        }
+
+        public Details LoginGet(int id)
+        {
+            string Query = @"select * from tbl_login where dateId='" + id + "'";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+            int mydateId = 0;
+
+            Details LoginDetails=new Details();
+            while (reader.Read())
+            {
+                LoginDetails.LoginRemark = reader["remarks"].ToString();
+                LoginDetails.LoginTime = reader["login_time"].ToString();
+
+            }
+            reader.Close();
+            connection.Close();
+
+            return LoginDetails;
+        }
+
+        public Details LogoutGet(int id)
+        {
+            string Query = @"select * from tbl_logout where dateId='" + id + "'";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+            int mydateId = 0;
+            Details LogoutDetails =new Details();
+            Details LoginDetails=new Details();
+            while (reader.Read())
+            {
+                LogoutDetails.LogoutRemark = reader["remarks"].ToString();
+                LogoutDetails.LogoutTime = reader["logout_time"].ToString();
+
+            }
+            reader.Close();
+            connection.Close();
+
+            return LogoutDetails;
+        }
     }
 }

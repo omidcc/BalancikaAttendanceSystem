@@ -42,7 +42,7 @@ namespace AttendanceAPP
             
         }
 
-        public void LoadComboZ()
+        public void LoadListBox()
         {
             
         }
@@ -56,20 +56,47 @@ namespace AttendanceAPP
             dateListView.Items.Clear();
 
             string name = nameComboBox.SelectedItem.ToString();
-            //month(monthListComboBox.SelectedItem.ToString());
             
-
-
             
-            List<string> datList= aStuffManager.GetStuffAttendanceList(name,firstDate,lastDate );
+        /**    List<string> datList= aStuffManager.GetStuffAttendanceList(name,firstDate,lastDate );
             if (datList.Count <= 0)
             {
                 MessageBox.Show(String.Format("In this month , {0} is not attended a single day", name));
             }
-            else
-            {
-               
-            }
+         * **/
+            
+                firstDate = fromDateTimePicker.Text;
+                lastDate = toDateTimePicker.Text;
+                int id = 0;
+                foreach (Stuff stuff in myStuffList)
+                {
+                    if (stuff.Name == name)
+                    {
+                        id = stuff.Id;
+                        break;
+                    }
+                }
+                List<Details> attendanceList = aStuffManager.GetAttendanceList(id, firstDate, lastDate);
+                foreach (Details details in attendanceList)
+                {   
+                    DateTime time=new DateTime();
+                    time=DateTime.Parse(details.Date);
+                    string day = String.Format("{0:dddd}", time);
+                    string dayFormat = String.Format("{0:ddd}", time.ToShortDateString());
+                    ListViewItem item = new ListViewItem(dayFormat);
+                    item.SubItems.Add(day);
+                    time = DateTime.Parse(details.LoginTime);
+                    item.SubItems.Add(time.ToShortTimeString());
+                    item.SubItems.Add(details.LoginRemark);
+                    time = DateTime.Parse(details.LogoutTime);
+                    item.SubItems.Add(time.ToShortTimeString());
+                    item.SubItems.Add(details.LogoutRemark);
+                    dateListView.Items.Add(item);
+                }
+
+
+
+           
 
 
 

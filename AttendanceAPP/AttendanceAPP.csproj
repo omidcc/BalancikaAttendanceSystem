@@ -61,6 +61,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Attendance.cs" />
+    <Compile Include="Model\Details.cs" />
     <Compile Include="Model\Stuff.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
