@@ -44,3 +44,24 @@ E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\Atte
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.TemporaryAttendance.resources
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
 E:\Balancika Project\Temp\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.pdb
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.exe.config
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.exe
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.pdb
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Admin.resources
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Login.resources
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Properties.Resources.resources
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.TemporaryAttendance.resources
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.exe
+D:\AttendanceAPP\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.pdb
+D:\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.exe.config
+D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.exe
+D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.pdb
+D:\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.exe
+D:\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\AttendanceAPP.pdb
+D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.csprojResolveAssemblyReference.cache
+D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Admin.resources
+D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Login.resources
+D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Properties.Resources.resources
+D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.TemporaryAttendance.resources
+D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache

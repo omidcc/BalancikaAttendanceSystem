@@ -47,6 +47,13 @@
             this.importButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.giveAttendance = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.holidayDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.holidaySubmitButton = new System.Windows.Forms.Button();
+            this.holidayRemarkTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateListView
@@ -105,6 +112,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(81, 138);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 19);
@@ -125,6 +133,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkRed;
             this.label1.Location = new System.Drawing.Point(36, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 19);
@@ -134,7 +143,8 @@
             // searchButton
             // 
             this.searchButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchButton.Location = new System.Drawing.Point(347, 155);
+            this.searchButton.ForeColor = System.Drawing.Color.DarkRed;
+            this.searchButton.Location = new System.Drawing.Point(227, 170);
             this.searchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(114, 36);
@@ -167,6 +177,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkRed;
             this.label3.Location = new System.Drawing.Point(72, 94);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 19);
@@ -183,6 +194,7 @@
             // importButton
             // 
             this.importButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.importButton.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.importButton.Location = new System.Drawing.Point(794, 497);
             this.importButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.importButton.Name = "importButton";
@@ -190,6 +202,7 @@
             this.importButton.TabIndex = 6;
             this.importButton.Text = "Import/PDF";
             this.importButton.UseVisualStyleBackColor = true;
+            this.importButton.Click += new System.EventHandler(this.importButton_Click);
             // 
             // label4
             // 
@@ -203,6 +216,7 @@
             // 
             // giveAttendance
             // 
+            this.giveAttendance.ForeColor = System.Drawing.Color.DarkRed;
             this.giveAttendance.Location = new System.Drawing.Point(650, 497);
             this.giveAttendance.Name = "giveAttendance";
             this.giveAttendance.Size = new System.Drawing.Size(126, 51);
@@ -211,12 +225,77 @@
             this.giveAttendance.UseVisualStyleBackColor = true;
             this.giveAttendance.Click += new System.EventHandler(this.giveAttendance_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.holidayRemarkTextBox);
+            this.groupBox1.Controls.Add(this.holidaySubmitButton);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.holidayDateTimePicker);
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkRed;
+            this.groupBox1.Location = new System.Drawing.Point(395, 88);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(525, 118);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Holiday";
+            // 
+            // holidayDateTimePicker
+            // 
+            this.holidayDateTimePicker.Location = new System.Drawing.Point(100, 44);
+            this.holidayDateTimePicker.Name = "holidayDateTimePicker";
+            this.holidayDateTimePicker.Size = new System.Drawing.Size(191, 27);
+            this.holidayDateTimePicker.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkRed;
+            this.label5.Location = new System.Drawing.Point(6, 47);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 19);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Select Date: ";
+            // 
+            // holidaySubmitButton
+            // 
+            this.holidaySubmitButton.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.holidaySubmitButton.ForeColor = System.Drawing.Color.DarkRed;
+            this.holidaySubmitButton.Location = new System.Drawing.Point(297, 43);
+            this.holidaySubmitButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.holidaySubmitButton.Name = "holidaySubmitButton";
+            this.holidaySubmitButton.Size = new System.Drawing.Size(192, 27);
+            this.holidaySubmitButton.TabIndex = 6;
+            this.holidaySubmitButton.Text = "Submit Holiday";
+            this.holidaySubmitButton.UseVisualStyleBackColor = true;
+            this.holidaySubmitButton.Click += new System.EventHandler(this.holidaySubmitButton_Click);
+            // 
+            // holidayRemarkTextBox
+            // 
+            this.holidayRemarkTextBox.Location = new System.Drawing.Point(100, 82);
+            this.holidayRemarkTextBox.Name = "holidayRemarkTextBox";
+            this.holidayRemarkTextBox.Size = new System.Drawing.Size(191, 27);
+            this.holidayRemarkTextBox.TabIndex = 7;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DarkRed;
+            this.label6.Location = new System.Drawing.Point(6, 84);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 19);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Remark:";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(945, 560);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.giveAttendance);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.importButton);
@@ -238,6 +317,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Admin_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,5 +344,11 @@
         private System.Windows.Forms.Button importButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button giveAttendance;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button holidaySubmitButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker holidayDateTimePicker;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox holidayRemarkTextBox;
     }
 }

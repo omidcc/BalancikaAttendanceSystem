@@ -18,5 +18,7 @@ namespace AttendanceAPP.Model
 
         public int DateId { get; set; }
         public int HolyDayCheker { get; set; }
+        public string Holiday { get; set; }
+        public string HolidayRemark { get; set; }
     }
 }

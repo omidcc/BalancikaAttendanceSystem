@@ -7,6 +7,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading;
+using System.Windows.Forms;
 using AttendanceAPP.Model;
 
 namespace AttendanceAPP.DAL
@@ -82,7 +83,7 @@ namespace AttendanceAPP.DAL
 
         public List<string> GetAttendanceList(int id, string firstDate, string lastDate)
         {
-            string Query = @"select * from tbl_attendance where userId='" + id + "' AND date>='"+firstDate+"' AND date<='"+lastDate+"' ";
+            string Query = @"select * from tbl_attendance where userId='" + id + "' AND date>='"+firstDate+"' AND date<='"+lastDate+"' ASC ";
 
             SqlConnection connection = new SqlConnection(connectionStrings);
 
@@ -105,7 +106,7 @@ namespace AttendanceAPP.DAL
 
         public void SubmitAttendance(int i, string date)
         {
-            string Query = @"insert into tbl_attendance(userId,date) values('" + i + "','" + date + "')";
+            string Query = @"insert into tbl_attendance(userId,date,holiday) values('" + i + "','" +date + "','"+0+"')";
 
             SqlConnection connection = new SqlConnection(connectionStrings);
 
@@ -187,7 +188,7 @@ namespace AttendanceAPP.DAL
         public List<Details> GetAttendanceID(int stuffId, string firstDate, string lastDate)
         {
 
-         string Query = @"select * from tbl_attendance where userId='" + stuffId + "' and date between '"+DateTime.Parse(firstDate)+"' and '"+DateTime.Parse(lastDate)+"'";
+         string Query = @"select * from tbl_attendance where userId='" + stuffId + "' and date between '"+DateTime.Parse(firstDate)+"' and '"+DateTime.Parse(lastDate)+"' order by date asc";
             //string Query = @"select * from tbl_attendance where userId='" + stuffId + "' ";
            
             SqlConnection connection = new SqlConnection(connectionStrings);
@@ -205,6 +206,8 @@ namespace AttendanceAPP.DAL
                 Details aDetails=new Details();
                 aDetails.dateId = Int32.Parse(reader["Id"].ToString());
                 aDetails.Date = reader["date"].ToString();
+                aDetails.Holiday =int.Parse( reader["holiday"].ToString());
+                aDetails.HolidayRemark = reader["holidayRemark"].ToString();
                 detailsList.Add(aDetails);
 
             }
@@ -263,5 +266,83 @@ namespace AttendanceAPP.DAL
 
             return LogoutDetails;
         }
+
+        public int SubmitHoliday(string holiday,string remark)
+        {
+            SubmitAttendanceHoliday(holiday,remark);
+
+            if (ping > 0)
+                return 1;
+            else
+                return 0;
+        }
+
+       
+        private int ping; 
+        private void SubmitAttendanceHoliday(string holiday,string remark)
+        {
+            List<Stuff> stuffList = GetAllStuff();
+            List<int>stuffId=new List<int>();
+            ping = 0;
+
+            foreach (Stuff stuff in stuffList)
+            {
+                SubmitWithRemark(stuff.Id, holiday, remark);
+                ping++;
+            }
+       
+        }
+
+        private void SubmitWithRemark(int stuffId,string holiday,string remark)
+        {
+            string Query = @"insert into tbl_attendance(userId,date,holiday,remark) values('" + stuffId + "','" + holiday + "','" + 0 + "','"+remark+"')";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        internal int CheckAttendanceByDate(DateTime dateTime)
+        {
+            string Query = @"select * from tbl_attendance where date='" + dateTime + "'";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            int count = 0;
+
+            while (reader.Read())
+            {
+                count++;
+
+            }
+            reader.Close();
+            connection.Close();
+
+            return count;
+        }
+
+        public void UpdateHoliday(string date)
+        {
+            string Query = @"UPDATE tbl_attendance SET holiday='"+1+"' where date='"+date+"'";
+
+            SqlConnection connection = new SqlConnection(connectionStrings);
+
+            connection.Open();
+            SqlCommand command = new SqlCommand(Query, connection);
+
+            command.ExecuteNonQuery();
+            connection.Close();
+
+        }
+
+       
     }
 }

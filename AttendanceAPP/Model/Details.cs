@@ -16,5 +16,7 @@ namespace AttendanceAPP.Model
         public string LoginRemark { get; set; }
         public string LogoutTime { get; set; }
         public string LogoutRemark { get; set; }
+        public int Holiday { get; set; }
+        public string HolidayRemark { get; set; }
     }
 }

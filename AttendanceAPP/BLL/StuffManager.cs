@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using AttendanceAPP.DAL;
 using AttendanceAPP.Model;
@@ -117,5 +118,32 @@ namespace AttendanceAPP.BLL
             }
             return AttendanceList;
         }
+
+
+        public string SubmitHoliday(string date,string remark)
+        {
+            int count = aStuffGateway.SubmitHoliday(date,remark);
+
+            if (count > 0)
+                return "Holiday Submitted";
+            else
+            {
+                return "Error Occured during holiday submission";
+            }
+        }
+
+        public int CheckAttendanceByDate(string date)
+        {
+            int isExist = aStuffGateway.CheckAttendanceByDate(DateTime.Parse(date));
+
+            return isExist;
+        }
+
+        public void UpdateHoliday(string date)
+        {
+            aStuffGateway.UpdateHoliday(date);
+        }
+
+
     }
 }
