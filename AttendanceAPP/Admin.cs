@@ -11,6 +11,8 @@ using AttendanceAPP.BLL;
 using AttendanceAPP.Model;
 using System.IO;
 using  System.Reflection;
+using Microsoft.Office.Interop.Excel;
+using System.Drawing;
 
 namespace AttendanceAPP
 {
@@ -356,7 +358,39 @@ namespace AttendanceAPP
 
         private void importButton_Click(object sender, EventArgs e)
         {
-            
+            Microsoft.Office.Interop.Excel.Application xla = new Microsoft.Office.Interop.Excel.Application();
+
+            xla.Visible = true;
+
+            Microsoft.Office.Interop.Excel.Workbook wb = xla.Workbooks.Add(Microsoft.Office.Interop.Excel.XlSheetType.xlWorksheet);
+
+            Microsoft.Office.Interop.Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)xla.ActiveSheet;
+
+            int i = 1;
+
+            int j = 1;
+
+            foreach (ListViewItem comp in dateListView.Items)
+            {
+
+                ws.Cells[i, j] = comp.Text.ToString();
+
+                //MessageBox.Show(comp.Text.ToString());
+
+                foreach (ListViewItem.ListViewSubItem drv in comp.SubItems)
+                {
+
+                    ws.Cells[i, j] = drv.Text.ToString();
+
+                    j++;
+
+                }
+
+                j = 1;
+
+                i++;
+
+            }
         }
 
 

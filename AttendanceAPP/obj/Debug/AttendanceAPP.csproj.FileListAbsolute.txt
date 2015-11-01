@@ -65,3 +65,5 @@ D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Login.resourc
 D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.Properties.Resources.resources
 D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.TemporaryAttendance.resources
 D:\BalancikaAttendanceSystem\AttendanceAPP\obj\Debug\AttendanceAPP.csproj.GenerateResource.Cache
+D:\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\Microsoft.Office.Tools.Excel.v4.0.Utilities.dll
+D:\BalancikaAttendanceSystem\AttendanceAPP\bin\Debug\Microsoft.Office.Tools.Excel.v4.0.Utilities.xml
